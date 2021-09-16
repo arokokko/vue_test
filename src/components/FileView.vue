@@ -1,6 +1,6 @@
 <template>
   <div class="file">
-    <img :src="require(`@/assets/icons/${fileType}_icon.png`)" alt="">
+    <img :src="require(`../assets/icons/${fileType}_icon.png`)" alt="">
     <div class="name">{{name}}</div>
   </div>
 </template>
@@ -15,6 +15,8 @@ export default {
   computed: {
     fileType() {
       switch(this.type) {
+        case 'application/octet-stream':
+          return 'browserslistrc';
         case 'application/javascript':
           return 'js';
         case 'application/json':
@@ -25,8 +27,6 @@ export default {
           return 'png';
         case 'image/svg':
           return 'svg';
-        case 'application/octet-stream':
-          return 'browserslistrc';
         default: 
           return 'txt';
       }

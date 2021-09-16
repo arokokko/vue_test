@@ -1,6 +1,6 @@
 <template>
   <div class="folder">
-    <img :src="require(`@/assets/icons/open_folder_icon.png`)" alt="">
+    <img :src="require(`../assets/icons/open_folder_icon.png`)" alt="">
     <div class="name">{{name}}</div>
   </div>
   
@@ -9,7 +9,7 @@
       <FolderView :name="folder.name" :folders="folder.folders" :files="folder.files" />
     </template>
   </div>
-  
+
   <div class="files">
     <template v-for="file in files" :key="file.name">
       <FileView :name="file.name" :type="file.type"/>
